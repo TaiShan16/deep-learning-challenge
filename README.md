@@ -68,6 +68,7 @@ Accuracy result from the second model:
 
 
 To enhance the model's performance, an automated model optimizer was employed with the objective of attaining the utmost accuracy. This was achieved by developing a method that utilizes the keras-tuner library to create a keras Sequential model, incorporating various hyperparameter options for optimization.
+
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/de10fc91-922f-4a27-b5bc-bdeb2fd91441)
 
 
@@ -81,12 +82,14 @@ Then, kt Hyperband function is utilized to run the optimizer.
 
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/0ddb849e-96c3-4a04-af80-20f6472db9e4)
 
+
 A search function was employed to identify the optimal combination of hyperparameters, resulting in the determination that the model achieved an accuracy of 73.38% 
 
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/71f58fc7-1210-4803-85bb-e7154eddc2cb)
 
 
-The most optimal model, as determined by the keras tuner method, was obtained using a sigmoid activation function with an input node count of 7. Additionally, the model consisted of 7 hidden layers and underwent 30 training epochs.
+The most optimal model, as determined by the keras tuner method, was obtained using a sigmoid activation function with an input node count of 7. 
+Additionally, the model consisted of 7 hidden layers and underwent 30 training epochs.
 
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/0173bd17-933e-4ad9-94dc-23f419122b43)
 
