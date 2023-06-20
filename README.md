@@ -43,28 +43,45 @@ In the initial model, the following parameters are employed for the neural netwo
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/ff031868-ef72-49ed-b768-21eec1f9dc7a)
 
   
-
 In the 2nd model, the following parameters are employed:
 - Three hidden layers, consisting of 80, 40, and 20 neurons, respectively, utilizing Rectified Linear Unit (ReLU) as the activation function.
 - A single output layer is incorporated, employing a binary classifier alongside the Sigmoid activation function. The 'adam' optimizer
   is utilized for optimization purposes; and accuracy metrics are extracted to evaluate the model's performance.
 - The decision to increase the number of hidden layers to three was made in response to the initial model's prediction accuracy falling below 75%.
-[insert picture]
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/e1eac688-2828-456c-a5f8-1dc0c2c07ed6)
+
 
 The initial model yielded an accuracy of 72.87%, whereas the second model achieved an accuracy of 72.90%. Despite incorporating three hidden layers in the second model, there was only a marginal improvement in accuracy.
-[insert pictures]
+
+Accuracy result from the initial model:
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/bfa9b4ce-ed41-435e-848d-2492460418b8)
+
+
+Accuracy result from the second model:
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/1c209a5d-23a3-4f93-84b4-3a11caec6817)
 
 To enhance the model's performance, an automated model optimizer was employed with the objective of attaining the utmost accuracy. This was achieved by developing a method that utilizes the keras-tuner library to create a keras Sequential model, incorporating various hyperparameter options for optimization.
-[insert pictures]
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/de10fc91-922f-4a27-b5bc-bdeb2fd91441)
+
+
 
 A function was implemented to facilitate hyperparameter tuning of deep learning models, encompassing the incorporation of three distinct activation functions, namely ReLU, Tanh, and Sigmoid, within the hidden layers. The function systematically iterates through various attributes on the initial layer, subsequently exploring a range of 1 to 20 neurons on subsequent layers. Additionally, the function explores different configurations of hidden layers and their respective neurons, thereby enabling comprehensive experimentation and evaluation of model performance.
-[insert picture]
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/9861fac2-2d65-4f27-9b93-8779115efcde)
+
 
 Then, kt Hyperband function is utilized to run the optimizer
 ![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/0ddb849e-96c3-4a04-af80-20f6472db9e4)
 
-Search function 
+A search function was employed to identify the optimal combination of hyperparameters, resulting in the determination that the model achieved an accuracy of 73.38% 
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/71f58fc7-1210-4803-85bb-e7154eddc2cb)
 
-![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/bcc4bf32-b612-4408-ba6b-ba94012a4aa6)
+
+The most optimal model, as determined by the keras tuner method, was obtained using a sigmoid activation function with an input node count of 7. Additionally, the model consisted of 7 hidden layers and underwent 30 training epochs.
+![image](https://github.com/TaiShan16/deep-learning-challenge/assets/122623573/0173bd17-933e-4ad9-94dc-23f419122b43)
+
+
 
 Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+
+## Summary
+The neural network model, which underwent optimization using the keras tuner method, achieved a prediction accuracy of 73%. This was accomplished by utilizing a sigmoid activation function. Notably, the performance improvement compared to the non-optimized model was only marginal. Considering the lack of substantial improvement in the prediction accuracy of the model when compared to the initial model, it is advisable to explore alternative hyperparameter combinations. This can be accomplished by conducting experiments encompassing a broader range of hyperparameter values, including the manipulation of layer count, neurons per layer, activation functions, learning rates, and batch sizes. This comprehensive exploration holds the potential to reveal a more optimal configuration that can yield enhanced accuracy.
